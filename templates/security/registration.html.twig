@@ -1,0 +1,183 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <style>body { background-color: #000080; } </style>
+  {#  <FONT color="white"><center><h2>Inscription sur le site StageAltérnance_Univ-orléans</h2></br></FONT>
+    <h4><FONT color="black">
+        {{ form_start(form) }}
+
+            {{ form_row (form.username, {'label': 'Nom de d\'utilisateur *',
+            'attr':{'placeholder': 'Nom d\'entreprise ou d\'etudiant ou de professeur'}}) }}
+
+             {{ form_row (form.fonction, {'label': 'Qui vous etes*',
+            'attr':{'placeholder': 'Dites nous qui vous etes! '}}) }}
+
+            {{ form_row (form.numero, {'label': 'Numero de siret pour
+            l\'entreprise ou le numero etudiant(e) *', 'attr':
+            {'placeholder': 'numero de siret pour
+            l\'entreprise ou le numero etudiant(e)'}}) }}
+
+            {{ form_row (form.adresse, {'label': 'Adresse de l\'entreprise ou etudiant(e) *',
+            'attr':{'placeholder': 'adresse de l\'entreprise ou etudiant'}}) }}
+
+            {{ form_row (form.bPostale, {'label': 'Boite Postale de l\'entreprise ou de l\'etudiant(e) *',
+            'attr':{'placeholder': 'adresse de l\'entreprise ou etudiant'}}) }}
+
+            {{ form_row (form.ville, {'label': 'Ville *',
+            'attr':{'placeholder': 'City'}}) }}
+
+            {{ form_row (form.site, {'label': 'Site de l\'entreprise *',
+            'attr':{'placeholder': 'Reservé uniquement pour les entreprises'}}) }}
+
+            {{ form_row (form.secteurActiviter, {'label': 'Secteur d\'activité de l\'entreprise ou la filiére pour
+            l\'etudiants et professeur *',
+            'attr':{'placeholder': 'Quel est votre secteur productif'}}) }}
+
+            {{ form_row (form.logo, {'label': 'Logo de l\'entreprise *',
+            'attr':{'placeholder': 'Reservé uniquement pour les entreprises'}}) }}
+
+
+            {{ form_row (form.email, {'label': 'Email *',
+            'attr':{'placeholder': 'Votre adresse qui vous permetra de se connecter'}}) }}
+
+            {{ form_row (form.password, {'label': 'Mot de passe *',
+            'attr':{'placeholder': 'password'}}) }}
+
+            {{ form_row (form.confirm_password, {'label': 'Confirmer votre mot de passe *',
+            'attr':{'placeholder': 'Répétez votre mot de passe'}}) }}
+
+            <button  type="submit" class="btn btn-primary btn-lg">Inscription</button>
+            </center>
+            </FONT>
+
+    {{ form_end(form) }}  #}
+
+    <div class="jumbotron">
+<center><h1 class="display-3">Formulaire d'inscription {{ title }}</h1></center>
+  <p class="lead"> {{ form_start(form) }}</p>
+  <hr class="my-4">
+            {% if ref ==1 %}
+            {{ form_row (form.username, {'label': 'Nom de de l\'entreprise *',
+            'attr':{'placeholder': ' Quel est le nom de votre entreprise ? '}}) }}
+
+             {{ form_row (form.fonction, {'label': 'Confirmez votre statut! *',
+            'attr':{'placeholder': 'vous etes une entreprise veillez juste le confirmer! '}}) }}
+
+            {{ form_row (form.numero, {'label': 'Numero de siret *', 'attr':
+            {'placeholder': 'Inscrivez le numéro de siret contenant 10 chiffre '}}) }}
+
+            {{ form_row (form.adresse, {'label': 'Adresse *',
+            'attr':{'placeholder': 'adresse de l\'entreprise '}}) }}
+
+            {{ form_row (form.bPostale, {'label': 'Boite Postale *',
+            'attr':{'placeholder': 'la boite postale de l\'entreprise'}}) }}
+
+            {{ form_row (form.ville, {'label': 'Ville *',
+            'attr':{'placeholder': 'City'}}) }}
+
+            {{ form_row (form.site, {'label': 'Site *',
+            'attr':{'placeholder': 'Site de l\'entreprise '}}) }}
+
+            {{ form_row (form.secteurActiviter, {'label': 'Secteur d\'activité de l\'entreprise *',
+            'attr':{'placeholder': 'Votre entreprise est basé sur quoi? '}}) }}
+
+            {{ form_row (form.logo, {'label': 'Contact *',
+            'attr':{'placeholder': 'le numero de téléphone de l\entreprise'}}) }}
+
+
+            {{ form_row (form.email, {'label': 'Email *',
+            'attr':{'placeholder': 'Votre adresse qui vous permetra de se connecter prochainement'}}) }}
+
+            {{ form_row (form.password, {'label': 'Mot de passe *',
+            'attr':{'placeholder': 'password'}}) }}
+
+            {{ form_row (form.confirm_password, {'label': 'Confirmer votre mot de passe *',
+            'attr':{'placeholder': 'Répétez votre mot de passe'}}) }}
+
+            {% elseif ref > 1 %}
+                
+                {{ form_row (form.username, {'label': 'Nom et Prénom *',
+                'attr':{'placeholder': 'Votre Nom et prenom veillez laisser un espace entre le nom et prenom'}}) }}
+
+                {{ form_row (form.fonction, {'label': 'Qui vous etes*',
+                'attr':{'placeholder': 'Veillez confirmez que vous étes professeur responsable! '}}) }}
+
+                {{ form_row (form.numero, {'label': 'Matricule*', 'attr':
+                {'placeholder': 'votre numero de professeur' }}) }}
+
+                {{ form_row (form.adresse, {'label': 'Adresse de votre université *',
+                'attr':{'placeholder': 'adresse d\'ou vous etes responsable' }}) }}
+
+                {{ form_row (form.bPostale, {'label': 'Boite Postale de l\'université *',
+                'attr':{'placeholder': 'la Boite postale de l\'université que vous etes responsables'}}) }}
+
+                {{ form_row (form.ville, {'label': 'Ville *',
+                'attr':{'placeholder': 'City'}}) }}
+
+                {{ form_row (form.site, {'label': 'Niveau d\'etude *',
+                'attr':{'placeholder': 'Votre niveau d\'étude '}}) }}
+
+                {{ form_row (form.secteurActiviter, {'label': 'Filiére *',
+                'attr':{'placeholder': 'La filiére que vous etes responsables'}}) }}
+
+                {{ form_row (form.logo, {'label': 'Fixe* ',
+                'attr':{'placeholder': 'le numero fixe de votre bureau '}}) }}
+
+
+                {{ form_row (form.email, {'label': 'Email *',
+                'attr':{'placeholder': 'Votre adresse qui vous permetra de se connecter apres cette inscription'}}) }}
+
+                {{ form_row (form.password, {'label': 'Mot de passe *',
+                'attr':{'placeholder': 'password'}}) }}
+
+                {{ form_row (form.confirm_password, {'label': 'Confirmer votre mot de passe *',
+                'attr':{'placeholder': 'Répétez votre mot de passe'}}) }}
+
+            {% else %}
+                {{ form_row (form.username, {'label': 'Nom et prenom *',
+                'attr':{'placeholder': 'veillez laissez un espace entre votre nom et prenom '}}) }}
+
+                {{ form_row (form.fonction, {'label': 'Qui vous etes*',
+                'attr':{'placeholder': 'Veillez confirmer que vous etes un(e) étudiant(e)!' }}) }}
+
+                {{ form_row (form.numero, {'label': 'Numero Etudiant *', 'attr':
+                {'placeholder': 'Votre numero d\'etudiant '}}) }}
+
+                {{ form_row (form.adresse, {'label': 'Adresse*',
+                'attr':{'placeholder': 'L\'adresse ou vous habitez '}}) }}
+
+                {{ form_row (form.bPostale, {'label': 'Boite Postale *',
+                'attr':{'placeholder': 'Votre boite postale '}}) }}
+
+                {{ form_row (form.ville, {'label': 'Ville *',
+                'attr':{'placeholder': 'City'}}) }}
+
+                {{ form_row (form.site, {'label': 'Niveau d\'étude *',
+                'attr':{'placeholder': 'Votre niveau d\'etude '}}) }}
+
+                {{ form_row (form.secteurActiviter, {'label': 'Filiere *',
+                'attr':{'placeholder': 'Votre filiére '}}) }}
+
+                {{ form_row (form.logo, {'label': 'Téléphone  *',
+                'attr':{'placeholder': 'Votre téléphone portable '}}) }}
+
+
+                {{ form_row (form.email, {'label': 'Email *',
+                'attr':{'placeholder': 'Votre adresse qui vous permetra de se connecter'}}) }}
+
+                {{ form_row (form.password, {'label': 'Mot de passe *',
+                'attr':{'placeholder': 'password'}}) }}
+
+                {{ form_row (form.confirm_password, {'label': 'Confirmer votre mot de passe *',
+                'attr':{'placeholder': 'Répétez votre mot de passe'}}) }}
+
+            {% endif %}
+
+            <center><button  type="submit" class="btn btn-primary btn-lg">Inscription</button>
+            <a class="btn btn-primary btn-lg" href="{{ path('app_logout') }}" role="button">Renoncer</a>
+            </center>
+            
+
+    {{ form_end(form) }}
+ 
+</div>
+{% endblock %}

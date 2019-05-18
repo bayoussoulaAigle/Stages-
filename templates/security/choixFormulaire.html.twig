@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <br><br>
+    <div class="jumbotron">
+     <style>body { background-color: #000080; } </style>
+        <center><h1 class="display-5">Choix d'inscription </h1></center>
+        <center><p class="lead">Cliquer en fonction de votre statut  </p></center>
+        <hr class="my-4">
+        <a class="btn btn-primary btn-lg btn-block" role="button" href="{{path('security_formEntreprise')}}">Entreprise</a></br>
+        <a class="btn btn-primary btn-lg btn-block" role="button" href="{{path('security_formProfesseur')}}">Professeur</a></br>
+        <a class="btn btn-primary btn-lg btn-block" role="button" href="{{path('security_formEtudiant')}}">Etudiant</a></br>
+        <hr class="my-4">
+    </div>
+{% endblock %}

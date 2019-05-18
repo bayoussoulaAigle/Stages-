@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste Annonce!{% endblock %}
+
+{% block body %}
+    </br>
+    <FONT color="white"><center><h2> Listes de Stages recommandés </h2> </center>
+                <style>body { background-color: #008080; } </style>
+                
+          <table class="table table-hover">
+  
+            <tbody>
+                
+                <tr class="table-primary">
+                    <td>Nom d'entreprise </td>
+                    <td>Date écrite</td>
+                    <td>Titre </td>
+                    <td>Filiére demandée </td>
+                    <td>Niveau demandé </td>
+                    <td>Visualiser ou {{ title }} la demande </td>
+                </tr>
+                <section class="stages">
+                </br>
+                    {% for station in stations %} 
+                        <tr class="table-light">
+                            <th scope="row"> {{ station.nomEntreprise }} </th>
+                            <td>  {{ station.date | date('d/m/y')}} {{ station.date | date('H:i') }} </td>
+                            <td> {{ station.titre }} </td>
+                            <td> {{ station.filiere }} </td>
+                            <td> {{ station.niveauEtude }} </td>
+                            <td> <a href ="{{ path('stage_show', {'id': station.id}) }}" class="btn btn-primary">Lire le contenu </a>
+                            {% if ref == 1 %}
+                                <a href ="{{ path('stage_supprimer', {'id': station.id}) }}" class="btn btn-danger">Supprimer</a></td>
+                            {% elseif ref > 1 %}
+                                <a href ="{{ path('stage_public', {'id': station.id}) }}" class="btn btn-success">publier le stage</a></td>
+                            {% else %}
+                                <a href ="#" class="btn btn-success">Telecharger en pdf</a></td>
+                            {% endif %}
+                            
+                         </tr>
+                           <tr class="table-secondary">
+                            <td scope="row"></td>
+                            <td></td> <td></td> <td></td><td></td><td></td>
+                           
+                            
+                        </tr>
+                    {% endfor %}
+                </section>
+            </tbody>
+        </table>
+    
+    </FONT>
+{% endblock %}

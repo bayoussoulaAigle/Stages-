@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+   <center><FONT color="white"><h1>Espace Professeur </h1> </br><h2>MENU</h2></FONT>
+        <style>
+                body { background-color: #008080; }  
+        </style>
+        </br>
+        </br>  
+        <p class="lead">
+       
+        <a href ="{{ path('stage') }}" class="btn btn-primary">Annonces de Stages</a>
+        <a href ="{{ path('stage_valider_prof') }}" class="btn btn-primary">stages public </a>
+         <a href ="{{ path('stage_professeur') }}" class="btn btn-primary">Recherches stages </a> 
+        </p>
+        <p class="lead">
+        
+        <a href ="{{ path('contact_etudiant') }}" class="btn btn-primary">Liste d'étudiants </a>
+        <a href ="{{ path('contact_entreprise') }}" class="btn btn-primary">Contacts d'entreprises </a>
+        <a href ="{{ path('contact_professeur') }}" class="btn btn-primary">Professeurs Responsable</a> 
+        </p>
+    </center>
+{% endblock %}

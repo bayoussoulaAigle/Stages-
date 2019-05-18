@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <style>body { background-color: #000080; } </style>
+    <div class="jumbotron">
+        <center><h1 class="display-5">Formulaire d'inscription {{ title }}</h1></center>
+        <center><p class="lead">< Veillez remplir les informations * obligatoires ></p></center>
+        <hr class="my-4">
+        {{ form_start(form) }}
+                {{ form_row (form.username, {'label': 'Nom et Prénom *',
+                'attr':{'placeholder': 'Votre Nom et prenom veillez laisser un espace entre le nom et prenom'}}) }}
+
+                {{ form_row (form.fonction, {'label': 'Qui vous etes*',
+                'attr':{'placeholder': 'Veillez confirmez que vous étes professeur responsable! '}}) }}
+
+                {{ form_row (form.numero, {'label': 'Matricule*', 'attr':
+                {'placeholder': 'votre numero de professeur' }}) }}
+
+                {{ form_row (form.adresse, {'label': 'Adresse de votre université *',
+                'attr':{'placeholder': 'adresse d\'ou vous etes responsable' }}) }}
+
+                {{ form_row (form.bPostale, {'label': 'Boite Postale de l\'université *',
+                'attr':{'placeholder': 'la Boite postale de l\'université que vous etes responsables'}}) }}
+
+                {{ form_row (form.ville, {'label': 'Ville *',
+                'attr':{'placeholder': 'City'}}) }}
+
+                {{ form_row (form.site, {'label': 'Niveau d\'etude *',
+                'attr':{'placeholder': 'Votre niveau d\'étude '}}) }}
+
+                {{ form_row (form.secteurActiviter, {'label': 'Filiére *',
+                'attr':{'placeholder': 'La filiére que vous etes responsables'}}) }}
+
+                {{ form_row (form.telephone, {'label': 'Fixe* ',
+                'attr':{'placeholder': 'le numero fixe de votre bureau '}}) }}
+
+
+                {{ form_row (form.email, {'label': 'Email *',
+                'attr':{'placeholder': 'Votre adresse qui vous permetra de se connecter apres cette inscription'}}) }}
+
+                {{ form_row (form.password, {'label': 'Mot de passe *',
+                'attr':{'placeholder': 'password'}}) }}
+
+                {{ form_row (form.confirm_password, {'label': 'Confirmer votre mot de passe *',
+                'attr':{'placeholder': 'Répétez votre mot de passe'}}) }}
+
+            <center><button  type="submit" class="btn btn-primary btn-lg">Inscription</button>
+            <a class="btn btn-primary btn-lg" href="{{ path('app_logout') }}" role="button">Abandan ! </a>
+            </center>
+            
+
+    {{ form_end(form) }}
+ 
+</div>
+{% endblock %}

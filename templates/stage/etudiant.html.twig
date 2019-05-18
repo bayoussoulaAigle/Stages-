@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+ </br>
+ </br>
+   <center><FONT color="white"><h3> MENU Espace Etudiant </h3></FONT>
+        <style>
+                body { background-color: #008080; }  
+        </style>
+        </br>
+        </br>  
+        <p class="lead">
+       
+        <a href ="{{ path('stage') }}" class="btn btn-primary">Annonces Stages et Altérnance</a>
+        <a href ="{{ path('stage_etudiant') }}" class="btn btn-primary">Dossier personnel</a>
+        <a href ="{{ path('stage_etudiant') }}" class="btn btn-primary">Archives</a>
+        <a href ="{{ path('stage_etudiant') }}" class="btn btn-primary">Recherches</a> 
+        </p>
+        <p class="lead">
+        
+        <a href ="{{ path('contact_etudiant') }}" class="btn btn-primary">Liste d'étudiants</a>
+        <a href ="{{ path('contact_professeur') }}" class="btn btn-primary">professeurs responsable </a>
+        {# <a href ="{{ path('contact_entreprise') }}" class="btn btn-primary">Liste d'entreprises </a> #}
+        <a href ="{{ path('stage_etudiant') }}" class="btn btn-primary">Andzou</a> 
+        </p>
+    </center>
+{% endblock %}

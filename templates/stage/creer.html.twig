@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme formStation 'bootstrap_4_layout.html.twig' %}
+
+{% block body %}
+   {# <FONT color="white"><center><h3>Postuler votre annonce au StageAltérnance_Univ-orleans</h3> </center>
+        <style>body { background-color: #008080; } </style>
+
+        {{ form_start(formStation) }}
+    
+            {{ form_row(formStation.niveauEtude,{'attr':{'placeholder':"level of study"}}) }}
+            {{ form_row(formStation.filiere,{'attr':{'placeholder':"Course of study"}}) }}
+            {{ form_row(formStation.nombreEtudiant) }}
+             {{ form_row(formStation.dateDebutStage) }}
+            {{ form_row(formStation.message,{'attr':{'placeholder':"send a message to the manager of the study area"}}) }}
+            {{ form_row(formStation.fichier) }}
+            <center color="blue">
+            </p></center>
+            <p><a href ="{{ path('stage') }}" class="btn btn-primary">Retour</a>
+                <button type="submit" class="btn btn-primary">
+                {% if modifierMode %}
+                Enregistrer les modifications
+                {% else %}
+                    Poster votre annonce
+                {% endif %}
+                </button>
+            </p>
+
+        {{ form_end(formStation)}}
+
+    </FONT>#}
+
+<div class="jumbotron">
+ <style>body { background-color: #008080; } </style>
+ <center> <h1 class="display-5">Postuler votre annonce </h1></center>
+  <hr class="my-4">
+  {{ form_start(formStation) }}
+            {{ form_row(formStation.titre, {'attr':{'placeholder':"le titre de votre stage " }}) }}
+            {{ form_row(formStation.niveauEtude,{'attr':{'placeholder':"le niveau d'étudiant dont vous avez besoins" }}) }}
+            {{ form_row(formStation.filiere,{'attr':{'placeholder':"La filére de l'tudiant " }}) }}
+            {{ form_row(formStation.nombreEtudiant, {'attr':{'placeholder':"Nombre d'tudiant dont vous avez besoins" }}) }}
+            {{ form_row(formStation.dateDebutStage) }}
+            {{ form_row(formStation.message,{'attr':{'placeholder':" Ecrivez votre messages ici " }}) }}
+            {{ form_row(formStation.fichier,{'attr':{'placeholder': 'aucun fichier sélectionné'}}) }}
+
+            
+            <center color="blue">
+            </p></center>
+     <center>       <p><a href ="{{ path('stage') }}" class="btn btn-primary">Retour</a>
+                <button type="submit" class="btn btn-primary">
+                {% if modifierMode %}
+                Enregistrer les modifications
+                {% else %}
+                    Poster votre annonce
+                {% endif %}
+                </button>
+            </p></center>
+
+        {{ form_end(formStation)}}
+</div>
+
+{% endblock %}

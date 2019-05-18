@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h3>{{ station.nomEntreprise }}</h3>
+    <p>Emit le {{ station.date | date('d/m/y')}} à {{ station.date | date('H:i') }}</p>
+    <p>Date du debut de stage {{ station.dateDebutStage | date('d/m/y')}} à {{ station.dateDebutStage | date('H:i') }}</p>
+    <div class="content">
+        <p> Titre : {{ station.titre}} </p>
+        <p> Filiére démandé : {{ station.filiere }} </p>
+        <p> Niveau Etude démandé: {{ station.niveauEtude}}
+        <p> Message</p><p>{{ station.message }} </p>
+        <p><a href ="{{ path('stage') }}" class="btn btn-primary">Retour</a>
+            {% if ref == 1 %}
+                <a href ="{{ path('stage_supprimer', {'id': station.id}) }}" class="btn btn-danger">Supprimer</a>
+                <a href ="{{ path('stage_modifier', {'id': station.id}) }}" class="btn btn-primary">Modifier</a>
+                <a href ="{{ path('stage_show', {'id': station.id}) }}" class="btn btn-secondary">Télécharger en pdf</a>
+            {% elseif ref > 1 %}
+                 <a href ="{{ path('stage_show', {'id': station.id}) }}" class="btn btn-success">valider le stage</a>
+                 <a href ="{{ path('stage_modifier', {'id': station.id}) }}" class="btn btn-primary">Télécharger</a>
+            {% else %}
+                 <a href ="#" class="btn btn-success">Télecharger en pdf </a>
+            
+                <section id="commentaires">
+                    <h3>{{ station.commentaires | length }} Commentaires de vos camarades </h3>
+                    {% for comment in station.commentaires%}
+                        <div class="comment">   
+                            <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+                                <div class="card-header">(<small>{{comment.
+                                                        dateCommentaire | date('d/m/Y à H:i')}}</small>)</div>
+                                <div class="card-body">
+                                    <h4 class="card-title">{{comment.auteur}}</h4>
+                                    <p class="card-text"> {{comment.contenu | raw }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                    {{ form_start(commentForm) }}
+
+                
+                    {{ form_row (commentForm.contenu, {'attr': 
+                    {'placeholder': "Ecrivez votre commentaire " }}) }}
+
+                    <button type="submit" class="btn btn-success">Commenter ! </button>
+                    
+                    {{ form_end(commentForm) }}
+                </section>
+            {% endif %}
+        </p>
+    </div>
+    
+{% endblock %}

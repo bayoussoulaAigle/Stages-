@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block body %}
+    </br>
+    <FONT color="white"><center><h2> {{ title }}</h2> </center>
+                <style>body { background-color: #008080; } </style>
+                
+        <table class="table table-hover">
+           {% if ref == 1 %}
+                <tbody>
+                    
+                    <tr class="table-primary">
+                        <td>Nom </td>
+                        <td>Site </td>
+                        <td>Adresse </td>
+                        <td>BP</td>
+                        <td>Ville </td>
+                        <td>Secteur d'activité</td>
+                    </tr>
+                     {% for station in stations  %}
+                       <tr class="table-light">
+                                <th scope="row"> {{ station.username }} </th>
+                                <td> {{ station.site }} </td>
+                                <td> {{ station.adresse }} </td>
+                                <td> {{ station.bPostale }} </td>
+                                <td> {{ station.ville}} </td>
+                                <td> {{ station.secteurActiviter}} </td>
+                            </tr>
+                           
+                        {% endfor %}
+                    </section>
+                </tbody>
+
+            {% elseif ref > 1 %}
+                <tbody>
+                    <tr class="table-primary">
+                        <td>Matricule</td>
+                        <td>Nom</td>
+                        <td>Responsable de filiere</td>
+                    </tr>
+                     {% for station in stations  %}
+                       <tr class="table-light">
+                                <th scope="row"> {{ station.numero }} </th>
+                                <td> {{ station.username }} </td>
+                                <td> {{ station.secteurActiviter }} </td>
+                            </tr>
+                           
+                        {% endfor %}
+                    </section>
+
+                </tbody>
+
+            {% elseif ref < 1%}
+               <tbody>
+                    <tr class="table-primary">
+                        <td>Numero etudiant </td>
+                        <td>Nom</td>
+                        <td>filier</td>
+                    </tr>
+                        {% for station in stations  %}
+                       <tr class="table-light">
+                                <th scope="row"> {{ station.numero }} </th>
+                                <td> {{ station.username }} </td>
+                                <td> {{ station.secteurActiviter }} </td>
+                            </tr>
+                           
+                        {% endfor %}
+                    </section>
+                </tbody>
+
+            {% endif %}
+        </table>
+    </FONT>
+
+
+{% endblock %}
+
+
+
+  

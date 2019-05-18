@@ -1,0 +1,21 @@
+{% extends "base.html.twig" %}
+{% block body %}
+
+  <style>body { background-color: #000080; } </style>
+  <div class="jumbotron">
+      <FONT color="black"><center><h1> <class="display-3">Bienvenue au StageAlternance_Univ-Orléans ! </h1></center>
+      <h5><p class="lead">StageAlternance_univ-Orléans est Un nouveau mode de collaboration étudiants entreprises pour développer l'esprit d'entreprendre.</p></h5>
+      <hr class="my-4">
+      <p>Cette collaboration avec le monde économique nous permet, en complément de la formation académique qui est dispensée à nos élèves, d’accompagner
+      <p> pleinement ces derniers dans l’élaboration de leur projet professionnel.</p>
+      <p> Les contacts réguliers avec nos entreprises partenaires les aident à découvrir</p>
+      <p> différents métiers et opportunités de carrière, à confronter leurs attentes avec les </p>
+      <p> réalités du marché, à mettre en pratique les enseignements reçus et ainsi à accroître
+      <p> petit à petit leur employabilité..</p>
+      <p class="lead">
+        <a class="btn btn-primary btn-lg" href="{{path('security_choixFormulaire')}}" role="button"> Inscription </a>
+      </p>
+  </div>
+    
+
+{% endblock %}

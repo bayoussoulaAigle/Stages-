@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+   <center><FONT color="white"><h1>Espace Entreprise</h1></br><h2> MENU </h2>
+        <p><hr color="white"></hr></FONT>
+        <style>body { background-color: #008080; }  </style>
+        </br>
+        </br>  
+        <p class="lead">
+       
+        <a href ="{{ path('stage_creer')}}" class="btn btn-primary">Déposer une annonce</a>
+        <a href ="{{ path('stage' ) }}" class="btn btn-primary">Annonces Postées </a>
+        <a href ="#" class="btn btn-primary">Recherches une annonce</a> 
+        </p>
+        <p class="lead">
+        
+       {# <a href ="#" class="btn btn-primary">Archives </a>#}
+        <a href ="#" class="btn btn-primary">Avis des étudiants</a>
+        <a href ="{{ path('contact_entreprise') }}" class="btn btn-primary">Contacts Personnels d'Universite</a> 
+        </p>
+    </center>
+{% endblock %}

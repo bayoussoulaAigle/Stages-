@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello StageController!{% endblock %}
+
+{% block body %}
+    </br>
+    <FONT color="white"><center><h2> Listes de Stages recommandés </h2> </center>
+                <style>body { background-color: #008080; } </style>
+                
+          <table class="table table-hover">
+  
+            <tbody>
+                
+                <tr class="table-primary">
+                    <td>Nom d'entreprise </td>
+                    <td>Date écrite</td>
+                    <td>Filiére demandée </td>
+                    <td>Visualiser ou {{ title }} la demande </td>
+                </tr>
+                <section class="stages">
+                </br>
+                    {% for station in stations %} 
+                        <tr class="table-light">
+                            <th scope="row"> {{ station.nomEntreprise }} </th>
+                            <td>  {{ station.date | date('d/m/y')}} {{ station.date | date('H:i') }} </td>
+                            <td> {{ station.filiere }} </td>
+                            <td> <a href ="{{ path('stage_show', {'id': station.id}) }}" class="btn btn-primary">Lire le contenu </a>
+                            <a href ="#" class="btn btn-success">Telecharger en pdf</a></td>
+                        </tr>
+                        <tr class="table-secondary">
+                            <td scope="row"></td>
+                            <td></td> <td></td> <td></td>
+                        </tr>
+                    {% endfor %}
+                </section>
+            </tbody>
+        </table>
+    
+    </FONT>
+{% endblock %}
